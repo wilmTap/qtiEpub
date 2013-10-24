@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <script type="text/javascript" src="signature_files/sha1.txt"></script>
+        <script type="text/javascript" src="signature_files/oauth.txt"></script>
+        <script type="text/javascript">
+//<![CDATA[ 
+function sign(form) {
+var accessor = { consumerSecret: 'CRmTYiqWQjvkJTBkHuRsgrZqwcO29XTR' };
+var message = { method: 'POST'
+                , action: 'https://webapps.ph.ed.ac.uk/qtiworks/lti/linklaunch' 
+                , parameters: OAuth.decodeForm('ltiLaunchForm')
+                };
+for (var e = 0; e < document.ltiLaunchForm.elements.length; ++e) {
+    var input = form.elements[e];
+    if (input.name !=null && input.name !="oauth_signature" && input.name !="oauth_signature_method" && input.name !="ltiLaunchForm"  
+    && input.value !="start" && input.value != null && input.value != "")
+     {
+    message.parameters.push([input.name, input.value]);
+     }
+OAuth.SignatureMethod.sign(message, accessor);
+document.ltiLaunchForm.oauth_signature.value = OAuth.getParameter(message.parameters,"oauth_signature");
+}
+}
+function doOnLoad() {
+    sign(document.ltiLaunchForm);
+    var frm = document.ltiLaunchForm;
+    frm.submit();
+     }
+
+function freshTimestamp() {
+      document.ltiLaunchForm.oauth_timestamp.value = OAuth.timestamp();
+}
+function freshNonce() {
+      document.ltiLaunchForm.oauth_nonce.value = OAuth.nonce(11);
+}                
+//]]>
+        </script>
+        <title>LTI launch</title>
+    </head>
+    <body onload="freshNonce(); freshTimestamp();">
+        <p>start the test by clicking the 'start' button.</p>
+        <form action="https://webapps.ph.ed.ac.uk/qtiworks/lti/linklaunch" name="ltiLaunchForm" id="ltiLaunchForm"
+            method="post" enctype="application/x-www-form-urlencoded">
+            <input type="hidden" name="oauth_version" value="1.0" />
+            <input type="hidden" name="oauth_consumer_key" value="8223Xh4u6yxD5oNzMKe7MLBNIq9WAXmnQNYWS" />
+            <input type="hidden" name="lti_message_type" value="basic-lti-launch-request" />
+            <input type="hidden" name="lti_version" value="LTI-1p0" />
+            <input type="hidden" name="resource_link_id" value="429785226" />
+            <input type="hidden" name="user_id" value="29123" />
+            <input type="hidden" name="tool_consumer_instance_url"
+                value="https://vle.uni.ac.uk/" />
+            <input type="hidden" name="lis_outcome_service_url"
+                value="http://ltiapps.net/test/tc-outcome.php" />
+            <input type="hidden" name="lis_result_sourcedid"
+                value="be3e1714fa147d2f65cedd3d80a18309:::dyJ86SiwwA9" />
+            <input type="hidden" name="ext_ims_lis_memberships_url"
+                value="http://ltiapps.net/test/tc-memberships.php" />
+            <input type="hidden" name="ext_ims_lis_memberships_id"
+                value="be3e1714fa147d2f65cedd3d80a18309:::4jflkkdf9s" />
+            <input type="hidden" name="oauth_callback" value="about:blank" />
+            <input type="hidden" name="oauth_signature" value="blahs" />
+            <input type="hidden" name="oauth_nonce" value="511af0208b1d8a7fe6f8ce0328b4cc06" />
+            <input type="hidden" name="oauth_timestamp" value="1381538527" />
+            <input type="hidden" name="oauth_signature_method" value="HMAC-SHA1" />
+            <input type="hidden" name="ltiLaunchForm" value=""/>
+            <input type="button" onclick="doOnLoad()" value="start"/>
+        </form>
+<!--        <script type="application/javascript">
+            document.ltiLaunchForm.oauth_nonce.value = OAuth.nonce(11);
+            document.ltiLaunchForm.oauth_timestamp.value = OAuth.timestamp();
+        </script>-->
+    </body>
+</html>

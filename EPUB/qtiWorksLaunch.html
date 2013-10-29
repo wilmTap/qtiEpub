@@ -2,26 +2,26 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
     <head>
-        <script type="text/javascript" src="signature_files/sha1.txt"></script>
-        <script type="text/javascript" src="signature_files/oauth.txt"></script>
+        <script type="text/javascript" src="js/sha1.txt"></script>
+        <script type="text/javascript" src="js/oauth.txt"></script>
         <script type="text/javascript">
-//<![CDATA[ 
+//<![CDATA[
 function sign(form) {
-var accessor = { consumerSecret: 'CRmTYiqWQjvkJTBkHuRsgrZqwcO29XTR' };
-var message = { method: 'POST'
-                , action: 'https://webapps.ph.ed.ac.uk/qtiworks/lti/linklaunch' 
+    var accessor = { consumerSecret: 'UTLaStBBrtW7QTDhmXSHShqSe8Mofd5r' };
+    var message = { method: 'POST'
+                , action: document.ltiLaunchForm.action
                 , parameters: OAuth.decodeForm('ltiLaunchForm')
                 };
-for (var e = 0; e < document.ltiLaunchForm.elements.length; ++e) {
-    var input = form.elements[e];
-    if (input.name !=null && input.name !="oauth_signature" && input.name !="oauth_signature_method" && input.name !="ltiLaunchForm"  
-    && input.value !="start" && input.value != null && input.value != "")
-     {
-    message.parameters.push([input.name, input.value]);
-     }
-OAuth.SignatureMethod.sign(message, accessor);
-document.ltiLaunchForm.oauth_signature.value = OAuth.getParameter(message.parameters,"oauth_signature");
-}
+    for (var e = 0; e < document.ltiLaunchForm.elements.length; ++e) {
+        var input = form.elements[e];
+        if (input.name !=null && input.name !="oauth_signature" && input.name !="oauth_signature_method" && input.name !="ltiLaunchForm"
+        && input.value !="start" && input.value != null && input.value != "")
+            {
+            message.parameters.push([input.name, input.value]);
+            }
+    OAuth.SignatureMethod.sign(message, accessor);
+    document.ltiLaunchForm.oauth_signature.value = OAuth.getParameter(message.parameters,"oauth_signature");
+    }
 }
 function doOnLoad() {
     sign(document.ltiLaunchForm);
@@ -34,21 +34,25 @@ function freshTimestamp() {
 }
 function freshNonce() {
       document.ltiLaunchForm.oauth_nonce.value = OAuth.nonce(11);
-}                
+}
 //]]>
         </script>
         <title>LTI launch</title>
     </head>
-    <body onload="freshNonce(); freshTimestamp();">
+    <body onload="freshTimestamp();freshNonce()">
         <p>start the test by clicking the 'start' button.</p>
         <form action="https://webapps.ph.ed.ac.uk/qtiworks/lti/linklaunch" name="ltiLaunchForm" id="ltiLaunchForm"
             method="post" enctype="application/x-www-form-urlencoded">
             <input type="hidden" name="oauth_version" value="1.0" />
-            <input type="hidden" name="oauth_consumer_key" value="8223Xh4u6yxD5oNzMKe7MLBNIq9WAXmnQNYWS" />
+            <input type="hidden" name="oauth_consumer_key" value="8400Xs93s5sdSLxM2Sn8PS6m5u65a0vJUq7co" />
             <input type="hidden" name="lti_message_type" value="basic-lti-launch-request" />
             <input type="hidden" name="lti_version" value="LTI-1p0" />
             <input type="hidden" name="resource_link_id" value="429785226" />
             <input type="hidden" name="user_id" value="29123" />
+            <input type="hidden" name="lis_person_name_full" value="John Logie Baird" />
+            <input type="hidden" name="lis_person_name_family" value="Baird" />
+            <input type="hidden" name="lis_person_name_given" value="John" />
+            <input type="hidden" name="lis_person_contact_email_primary" value="jbaird@uni.ac.uk" />
             <input type="hidden" name="tool_consumer_instance_url"
                 value="https://vle.uni.ac.uk/" />
             <input type="hidden" name="lis_outcome_service_url"
@@ -67,9 +71,5 @@ function freshNonce() {
             <input type="hidden" name="ltiLaunchForm" value=""/>
             <input type="button" onclick="doOnLoad()" value="start"/>
         </form>
-<!--        <script type="application/javascript">
-            document.ltiLaunchForm.oauth_nonce.value = OAuth.nonce(11);
-            document.ltiLaunchForm.oauth_timestamp.value = OAuth.timestamp();
-        </script>-->
     </body>
 </html>

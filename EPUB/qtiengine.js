@@ -303,9 +303,9 @@ function ResponseProcessingTemplate(templateID) {
         response = variables.RESPONSE;
         outcome = variables.SCORE;
         if (response.Correct()) {
-            outcome.SetValue([1]);
+            outcome.SetValue(['correct']);
         } else {
-            outcome.SetValue([0]);
+            outcome.SetValue(['not correct yet, try again']);
         }
     }
     

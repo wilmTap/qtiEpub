@@ -4,10 +4,10 @@
     version="2005-1"
     xml:lang="en">
     <head>
-        <meta name="dtb:uid" content="http://example.org/dummy/URIstub/"/>
+        <meta name="dtb:uid" content="http://www.cetis.ac.uk/a1"/>
         <meta name="dtb:depth" content="1"/>
-        <meta name="dtb:totalPageCount" content="0"/>
-        <meta name="dtb:maxPageNumber" content="0"/>
+        <meta name="dtb:totalPageCount" content="3"/>
+        <meta name="dtb:maxPageNumber" content="3"/>
     </head>
     <docTitle>
         <text/>
@@ -21,9 +21,15 @@
         </navPoint>
         <navPoint id="chapter1" playOrder="2">
             <navLabel>
-                <text>Signs in English</text>
+                <text>Understanding written texts; Signs in English</text>
             </navLabel>
-            <content src="chapter1.xhtml"/>
+            <content src="chapter1.html"/>
+        </navPoint>
+        <navPoint id="ack" playOrder="3">
+            <navLabel>
+                <text>Acknowledgements</text>
+            </navLabel>
+            <content src="acknowledgements.xhtml"></content>
         </navPoint>
     </navMap>
 </ncx>

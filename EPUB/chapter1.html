@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<script type="application/javascript">
+//<![CDATA[
+        function online() {
+            if (window.chrome && navigator.onLine) {
+                document.getElementById("qtiLaunch").setAttribute("data", "qtiWorksLaunch.html");
+            }
+            else
+            {
+            	document.getElementById("qtiLaunch").setAttribute("data", "qtiwidget.html");
+            }	
+        }//]]>
+		</script>
+		<link rel="stylesheet" type="text/css" href="stylesheet.css" />
+		<title>Signs in English</title>
+	</head>
+	<body onload="online()">
+		<h1>Travel</h1>
+		<p>When travelling, it is very important to read all signs carefully. Before we learn more
+			about reading comprehension, let's take the following test..</p>
+		<object data="chapter1fb.xhtml" type="application/xhtml+xml" id="qtiLaunch" width="800"
+			height="800">
+			<p><a href="http://ovod.net/moodle/mod/lti/view.php?id=4">Try the question online</a></p>
+		</object>
+	</body>
+</html>

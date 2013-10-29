@@ -4,24 +4,32 @@
     xmlns:dcterms="http://purl.org/dc/terms/" version="3.0" xml:lang="en"
     unique-identifier="bookid">
     <metadata>
-        <dc:title>English </dc:title>
+        <dc:title>English for speakers of other languages</dc:title>
         <dc:language id="pub-language">en</dc:language>
-        <dc:identifier id="bookid">http://my-URI-stub/</dc:identifier>
+        <dc:identifier id="bookid">http://www.cetis.ac.uk/a1</dc:identifier>
+        <dc:subject>TESOL</dc:subject>
+        <dc:creator>Wilbert Kraan</dc:creator>
         <meta property="dcterms:modified">2012-02-20T22:17:24Z</meta>
     </metadata>
     <manifest>
         <item id="ncx" href="toc.ncx" media-type="application/x-dtbncx+xml"/>
         <item id="htmltoc" properties="nav" media-type="application/xhtml+xml" href="toc.xhtml"/>
         <item id="front_cover" href="front-cover.xhtml" media-type="application/xhtml+xml"/>
-        <item id="chapter1" href="chapter1.xhtml" media-type="application/xhtml+xml"/>
+        <item id="chapter1" href="chapter1.html" media-type="application/xhtml+xml" fallback="chapter1fb" properties="scripted"/>
+        <item id="chapter1fb" href="chapter1fb.xhtml" media-type="application/xhtml+xml"/>
+        <item id="qtiwidget" href="qtiwidget.html" media-type="text/html"/>
+        <item id="qtiengine" href="qtiengine.js" media-type="application/ecmascript"/>
         <item id="style" href="stylesheet.css" media-type="text/css"/>
-        <item id="jsQuiz" href="test/js20131001012049166.xhtml" media-type="application/xhtml+xml"/>
-        <item id="quizJS" href="test/qtiengine.js" media-type="application/ecmascript"/>
+        <item id="sha1" href="js/sha1.txt" media-type="application/ecmascript"/>
+        <item id="oauth" href="js/oauth.txt" media-type="application/ecmascript"/>
         <item id="sign" href="images/sign.png" media-type="image/png"/>
-        <item id="ltiLaunch" href="qtiWorksLaunch.xhtml" media-type="application/xhtml+xml" properties="scripted"/>
+        <item id="bigben" href="images/bigben.jpg" media-type="image/jpeg"/>
+        <item id="ltiLaunch" href="qtiWorksLaunch.html" media-type="application/xhtml+xml" properties="scripted"/>
+        <item id="ack" href="acknowledgements.xhtml" media-type="application/xhtml+xml"/>
     </manifest>
     <spine toc="ncx">
         <itemref idref="front_cover"/>
         <itemref idref="chapter1"/>
+        <itemref idref="ack"/>
     </spine>
 </package>

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:qti="http://www.imsglobal.org/xsd/imsqti_v2p1">
+    <head>
+        <title>Unattended Luggage</title>
+        <meta name="qti.identifier" content="choice" />
+        <meta name="qti.adaptive" content="false" />
+        <meta name="qti.timeDependent" content="false" />
+        <style type="text/css">
+            .responseDeclaration,
+            .outcomeDeclaration{
+                display:none
+            }
+            .qti-outcomes table{
+                border-collapse:collapse;
+            }
+            .qti-outcomes td,
+            .qti-outcomes th{
+                font-size:1em;
+                padding:3px 7px 2px 7px;
+            }
+            .qti-outcomes th{
+                font-size:1.1em;
+                text-align:left;
+                padding-top:5px;
+                padding-bottom:4px;
+                background-color:#A7C942;
+                color:#ffffff;
+            }</style>
+        <style type="text/css"></style>
+    </head>
+    <body onload="SetupPage()">
+        <script type="text/javascript" src="qtiengine.js"></script>
+        <script type="text/javascript">
+function SetupPage () {
+    InitBuiltins();
+    InitChoiceInteraction('RESPONSE');
+    InitOutcome('SCORE');
+    ResponseProcessingTemplate('http://www.imsglobal.org/question/qti_v2p1/rptemplates/match_correct');
+}
+            </script>
+        <form action="" method="get">
+            <div xmlns:h="http://www.w3.org/1999/xhtml" class="qti.builtins"><input id="numAttempts"
+                type="hidden" name="numAttempts" value="1" /></div>
+            <div class="qti-itemBody">
+                <p>Look at the text in the picture.</p>
+                <p>
+                    <img src="images/sign.png" alt="NEVER LEAVE LUGGAGE UNATTENDED" />
+                </p>
+                <div class="qti-choiceInteraction" id="RESPONSE" data-baseType="identifier"
+                    data-cardinality="single" data-shuffle="false" data-maxChoices="1"><p
+                        class="qti-prompt">What does it say?</p><dl
+                            xmlns:h="http://www.w3.org/1999/xhtml">
+                            <dd><input type="radio" name="RESPONSE" id="RESPONSE.ChoiceA"
+                                value="ChoiceA" data-correct="true" /> You must stay with your
+                                luggage at all times.</dd>
+                            <dd><input type="radio" name="RESPONSE" id="RESPONSE.ChoiceB"
+                                value="ChoiceB" /> Do not let someone else look after your
+                                luggage.</dd>
+                            <dd><input type="radio" name="RESPONSE" id="RESPONSE.ChoiceC"
+                                value="ChoiceC" /> Remember your luggage when you leave.</dd>
+                        </dl></div>
+            </div>
+            <p xmlns:h="http://www.w3.org/1999/xhtml"><input type="submit" value="OK" /></p>
+        </form>
+        <div class="qti-outcomes"><table xmlns:h="http://www.w3.org/1999/xhtml">
+            <tr class="qti-outcomeDeclaration" id="SCORE">
+                <td> </td>
+                <td> </td>
+                <td> </td>
+                <td> <dl id="SCORE.value">
+                    <dd>0</dd>
+                </dl></td>
+            </tr>
+        </table></div>
+    </body>
+</html>

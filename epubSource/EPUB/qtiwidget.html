@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:qti="http://www.imsglobal.org/xsd/imsqti_v2p1">
+    <head>
+        <title>Unattended Luggage</title>
+        <meta name="qti.identifier" content="choice" />
+        <meta name="qti.adaptive" content="false" />
+        <meta name="qti.timeDependent" content="false" />
+        <link rel="stylesheet" type="text/css" href="qti2html.css" />
+    </head>
+    <body onload="SetupPage()">
+        <script type="text/javascript" src="qtiengine.js"></script>
+        <script type="text/javascript">
+function SetupPage () {
+    InitBuiltins();
+    InitChoiceInteraction('RESPONSE');
+    InitOutcome('SCORE');
+    ResponseProcessingTemplate('http://www.imsglobal.org/question/qti_v2p1/rptemplates/match_correct');
+                
+                
+}
+            </script>
+        <form action="" method="get">
+            <div class="qti.builtins"><input value="1" name="numAttempts" type="hidden"
+                id="numAttempts" /></div>
+            <div class="qti-itemBody">
+                <p>Look at the text in the picture.</p>
+                <p>
+                    <img src="images/sign.png" alt="NEVER LEAVE LUGGAGE UNATTENDED" />
+                </p>
+                <div class="qti-choiceInteraction" id="RESPONSE" data-baseType="identifier"
+                    data-cardinality="single" data-shuffle="false" data-maxChoices="1"><p
+                        class="qti-prompt">What does it say?</p><dl>
+                            <dd><input value="ChoiceA" id="RESPONSE.ChoiceA" name="RESPONSE"
+                                type="radio" data-correct="true" /> You must stay with your luggage
+                                at all times.</dd>
+                            <dd><input value="ChoiceB" id="RESPONSE.ChoiceB" name="RESPONSE"
+                                type="radio" /> Do not let someone else look after your
+                                luggage.</dd>
+                            <dd><input value="ChoiceC" id="RESPONSE.ChoiceC" name="RESPONSE"
+                                type="radio" /> Remember your luggage when you leave.</dd>
+                        </dl></div>
+            </div>
+            <p><input value="OK" type="submit" /></p>
+        </form>
+        <div class="qti-outcomes"><table>
+            <tr>
+                <th>identifier</th>
+                <th>baseType</th>
+                <th>cardinality</th>
+                <th>value</th>
+            </tr>
+            <tr id="SCORE" class="qti-outcomeDeclaration">
+                <td>SCORE</td>
+                <td>integer</td>
+                <td>single</td>
+                <td class="score"><dl id="SCORE.value">
+                    <dd>0</dd>
+                </dl></td>
+            </tr>
+        </table></div>
+    </body>
+</html>

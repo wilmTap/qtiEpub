@@ -1,0 +1,9 @@
+            .responseDeclaration{
+                display:none
+            }
+            .qti-outcomes{
+             visibility:hidden;
+            }
+            .score{
+            visibility:visible;
+            }

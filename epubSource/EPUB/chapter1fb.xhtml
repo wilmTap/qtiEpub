@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:qti="http://www.imsglobal.org/xsd/imsqti_v2p1">
+    <head>
+        <title>Unattended Luggage</title>
+        <meta name="qti.identifier" content="choice" />
+        <meta name="qti.adaptive" content="false" />
+        <meta name="qti.timeDependent" content="false" />
+        <link rel="stylesheet" type="text/css" href="qti2html.css" />
+    </head>
+    <body>
+        <h2>Unattended Luggage</h2>
+        <div class="qti-itemBody">
+            <p>Look at the text in the picture.</p>
+            <p>
+                <img src="images/sign.png" alt="NEVER LEAVE LUGGAGE UNATTENDED" />
+            </p>
+            <div class="qti-choiceInteraction" id="RESPONSE" data-baseType="identifier"
+                data-cardinality="single" data-shuffle="false" data-maxChoices="1"><p
+                    class="qti-prompt">What does it say?</p><ul class="qti-choiceInteraction">
+                        <li class="qti-simpleChoice" data-identifier="ChoiceA" data-correct="true">You
+                            must stay with your luggage at all times.</li>
+                        <li class="qti-simpleChoice" data-identifier="ChoiceB">Do not let someone else
+                            look after your luggage.</li>
+                        <li class="qti-simpleChoice" data-identifier="ChoiceC">Remember your luggage
+                            when you leave.</li>
+                    </ul></div>
+        </div>
+        <div class="qti-outcomes"
+            data-template="http://www.imsglobal.org/question/qti_v2p1/rptemplates/match_correct"
+            ><h3>Outcomes</h3><table>
+                <tr>
+                    <th>identifier</th>
+                    <th>baseType</th>
+                    <th>cardinality</th>
+                    <th>default</th>
+                </tr>
+                <tr class="qti-outcomeDeclaration">
+                    <td>SCORE</td>
+                    <td>integer</td>
+                    <td>single</td>
+                    <td><dl class="qti-default">
+                        <dd>0</dd>
+                    </dl></td>
+                </tr>
+            </table></div>
+    </body>
+</html>
